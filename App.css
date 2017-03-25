@@ -1,0 +1,79 @@
+.App {
+    text-align: center;
+}
+
+.App-logo {
+    animation: App-logo-spin infinite 20s linear;
+    height: 80px;
+}
+
+.App-header {
+    background-color: #222;
+    padding: 5px;
+    color: white;
+}
+
+.App-intro {
+    font-size: large;
+}
+
+@keyframes App-logo-spin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+.Logo {
+    float: left;
+    display: inline-block;
+    /*width: 33%;*/
+    /*height: 100%;*/
+}
+
+.Date {
+    float: none;
+    display: inline-block;
+    /*width: 33%;*/
+    /*height: 100%;*/
+}
+
+.Account {
+    float: right;
+    display: inline-block;
+    /*width: 33%;*/
+    /*height: 100%;*/
+}
+
+.date-picker {
+    float: left;
+    width: 20%;
+    padding-top: 5px;
+}
+
+.pad {
+    float: right;
+    width: 80%;
+    height: 100%;
+    text-align: left;
+    padding-right: 5px;
+    margin-top: -10px;
+    overflow-y: scroll;
+    /*display: flex;*/
+}
+
+.CodeMirror {
+    height: 600px;
+    text-align: left;
+    overflow-y: scroll;
+}
+
+.markdown-pad {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+
+    width: 100%;
+    resize: none;
+    overflow-wrap: normal;
+    overflow-y: scroll;
+    overflow-x: scroll;
+}
