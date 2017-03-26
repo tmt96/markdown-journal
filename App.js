@@ -1,13 +1,19 @@
+// (c) 2017 Tuan Tran
+// Simple web-based journal app based on Markdown. Syncing with Google Drive
+
+// TODO: cut down on unneccessary react component dependencies
 import React, { Component } from 'react';
 // import SimpleMDE from 'simplemde';
 import DatePicker from 'react-pikaday-component';
-var SimpleMDE = require('react-simplemde-editor');
+let SimpleMDE = require('react-simplemde-editor');
 
 require('pikaday/css/pikaday.css');
 require('simplemde/dist/simplemde.min.css');
 import './App.css';
 
+
 class Pad extends Component {
+    // TODO: add more toolbar buttons. Change options.
     render(){
         return (
             <div>
@@ -19,25 +25,30 @@ class Pad extends Component {
     }
 }
 
+// TODO: Switch to old journal when change date
+function onDateChange(date) {
+    document.getElementById("page-title").innerHTML = date.toDateString();
+}
+
 
 class JournalDate extends Component {
+    // TODO: consistent date formatting
     constructor() {
         super();
         this.state = {};
     }
 
     onDateChange(date) {
+        onDateChange(date);
         this.setState({ date });
     }
 
     render() {
         const { date } = this.state;
-
         return (
             <div>
                 <DatePicker
-                    placeholder="DD/MM/YYYY"
-                    format="DD/MM/YYYY"
+                    placeholder="choose a date"
                     value={new Date(date)}
                     onChange={this.onDateChange}
                 />
@@ -49,6 +60,8 @@ class JournalDate extends Component {
 class MainJournal extends Component {
 
     render() {
+        // TODO: New journal button, which when clicked should create a new page with default headings for user
+        // TODO: Fix unequal top margin
         return (
             <div className="">
                 <div className="date-picker">
@@ -56,7 +69,7 @@ class MainJournal extends Component {
                 </div>
 
                 <div className="pad">
-                    <Pad></Pad>
+                    <Pad/>
                 </div>
             </div>
         );
@@ -65,13 +78,16 @@ class MainJournal extends Component {
 
 class Header extends Component {
     render() {
-        return (
+        // TODO: Syncing to Google Drive, auto-uploading & retrieving (default directory structure: MDiary/{year}/{month}/{day}
+        // TODO: Retrieved from GDrive safely, even if user change title (or disable renaming, if possible)
+        // TODO: Logos & images!
+            return (
             <div>
                 <div className="Logo">
                     <h2>MDiary</h2>
                 </div>
                 <div className="Date">
-                    <h2> {new Date().toJSON().slice(0,10).replace(/-/g,'/')} </h2>
+                    <h2 id="page-title"> {new Date().toDateString()} </h2>
                 </div>
                 <div className="Account">
                     <h2 className="avatar">Ngoc Van</h2>
