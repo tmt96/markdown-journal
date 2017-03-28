@@ -13,14 +13,10 @@ class MainJournal extends Component {
         // TODO: New journal button, which when clicked should create a new page with default headings for user
         // TODO: Fix unequal top margin
         return (
-            <div className="">
-                <div className="sidebar">
-                    <Sidebar/>
-                </div>
+            <div className="journal-main">
+                <Sidebar/>
 
-                <div className="pad" id="editor">
-                    <Pad/>
-                </div>
+                <Pad className="mainpad" id="editor"/>
             </div>
         );
     }

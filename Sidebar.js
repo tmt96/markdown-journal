@@ -13,7 +13,7 @@ class Sidebar extends Component {
 
     render() {
         return (
-            <div>
+            <div className="sidebar">
                 <div>
                     <button
                         className="newjournal-button"
@@ -21,9 +21,7 @@ class Sidebar extends Component {
                         New Journal
                     </button>
                 </div>
-                <div className="date-picker">
-                    <DatePicker/>
-                </div>
+                <DatePicker className="date-picker"/>
             </div>
         )
     }

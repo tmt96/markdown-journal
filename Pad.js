@@ -23,7 +23,7 @@ class Pad extends Component {
     // TODO: add more toolbar buttons. Change options.
     render(){
         return (
-            <div>
+            <div className="pad">
                 <SimpleMDE
                     value={this.state.textContent}
                     style="display:none"

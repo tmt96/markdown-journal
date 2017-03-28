@@ -10,7 +10,7 @@ class Header extends Component {
         // TODO: Retrieved from GDrive safely, even if user change title (or disable renaming, if possible)
         // TODO: Logos & images!
         return (
-            <div>
+            <div  className="App-header">
                 <div className="Logo">
                     <h2>MDiary</h2>
                 </div>
