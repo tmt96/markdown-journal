@@ -43,20 +43,35 @@
     /*height: 100%;*/
 }
 
-.date-picker {
+.sidebar {
     float: left;
     width: 20%;
-    padding-top: 5px;
+    /*padding-top: 50px;*/
+    display: inline-block;
+}
+
+.newjournal-button {
+    padding: 10px;
+    margin: 10px;
+    border-radius: 10px;
+    box-shadow: 0px;
+    color: white;
+    width: 150px;
+    font-size: 14px;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    background: forestgreen;
+
 }
 
 .pad {
     float: right;
-    width: 80%;
+    width: 78%;
     height: 100%;
     text-align: left;
     padding-right: 5px;
-    margin-top: -10px;
+    margin-top: 10px;
     overflow-y: scroll;
+    display: inline-block;
     /*display: flex;*/
 }
 

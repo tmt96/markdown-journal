@@ -1,61 +1,18 @@
 // (c) 2017 Tuan Tran
 // Simple web-based journal app based on Markdown. Syncing with Google Drive
 
+// TODO: Rewrite app to conform to react convention: each class in its own file, states should be in parent component.
 // TODO: cut down on unneccessary react component dependencies
 import React, { Component } from 'react';
-// import SimpleMDE from 'simplemde';
-import DatePicker from 'react-pikaday-component';
-let SimpleMDE = require('react-simplemde-editor');
+import Pad from "./Pad.js";
+import Sidebar from "./Sidebar.js";
 
-require('pikaday/css/pikaday.css');
-require('simplemde/dist/simplemde.min.css');
 import './App.css';
 
-
-class Pad extends Component {
-    // TODO: add more toolbar buttons. Change options.
-    render(){
-        return (
-            <div>
-                <SimpleMDE style="display:none"
-                    onChange={this.handleChange}
-                />
-            </div>
-        );
-    }
-}
-
 // TODO: Switch to old journal when change date
-function onDateChange(date) {
-    document.getElementById("page-title").innerHTML = date.toDateString();
-}
-
-
-class JournalDate extends Component {
-    // TODO: consistent date formatting
-    constructor() {
-        super();
-        this.state = {};
-    }
-
-    onDateChange(date) {
-        onDateChange(date);
-        this.setState({ date });
-    }
-
-    render() {
-        const { date } = this.state;
-        return (
-            <div>
-                <DatePicker
-                    placeholder="choose a date"
-                    value={new Date(date)}
-                    onChange={this.onDateChange}
-                />
-            </div>
-        );
-    }
-}
+// function onDateChange(date) {
+//     document.getElementById("page-title").innerHTML = date.toDateString();
+// }
 
 class MainJournal extends Component {
 
@@ -64,11 +21,12 @@ class MainJournal extends Component {
         // TODO: Fix unequal top margin
         return (
             <div className="">
-                <div className="date-picker">
-                    <JournalDate/>
+
+                <div className="sidebar">
+                    <Sidebar/>
                 </div>
 
-                <div className="pad">
+                <div className="pad" id="editor">
                     <Pad/>
                 </div>
             </div>
